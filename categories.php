@@ -43,19 +43,24 @@ include('header.php');
 
 <div>
     <div><h3>Current Categories</h3></div>
-    <?php
-        foreach(get_categories() as $cat){
-                echo'<div style="display:flex; flex:wrap; margin: 10px auto;">';
-                echo"<div class='category_title'>";
-                echo $cat['categoryTitle'];
-                echo'</div>';
-                echo"<div style='margin: auto 20px;'>";
-                echo "<form action='categories.php' method='POST'>";
-                echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='category_id' value='".$cat['category_id'].">'"."<i class='far fa-times-circle fa-lg' ></i>"."</button>";
-                echo "</form>";
-                echo'</div>';
-                echo'</div>';
-        }
-
-    ?>
+        <div class="list-container">
+            <?php
+                foreach(get_categories() as $cat){
+                        echo"<div class='category_list'>";
+                        echo"<div class='category_title'>";
+                        echo $cat['categoryTitle'];
+                        echo'</div>';
+                        echo"<div style='margin: auto 20px;'>";
+                        echo "<form action='categories.php' method='POST'>";
+                        echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='category_id' value='".$cat['category_id'].">'"."<i class='far fa-times-circle fa-lg' ></i>"."</button>";
+                        echo "</form>";
+                        echo'</div>';
+                        echo'</div>';
+                }
+            ?>
+        </div>
 </div>
+
+<?php 
+include('footer.php');
+?>

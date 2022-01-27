@@ -10,10 +10,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
     </head>
     <body>
-        <nav><h1>✅ To Do List</h1>
+        <nav><h1  style='margin: 60px 0px;'>✅ To Do List</h1>
             <a href="tasks.php">Tasks</a>
             <a href="categories.php">Categories</a>
             <a href="reports.php">Reports</a>
         </nav>
+        <div class="contianer">
         
      

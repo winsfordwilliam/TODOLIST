@@ -4,21 +4,35 @@
 }
 
 body{
-    width: 90%;
-    max-width: 1000px;
-    margin:auto;
+    width: 100%;
     text-align: center;
     line-height: 1.5rem;
+    margin:0;
+    padding:0;
+    background-color: #F7E8C4;
 }
 form{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-input, select{
-  display: block;
-  margin: 20px auto;
-  height: 30px;
-  width: 30%;
+input, select, textarea{
+    display: block;
+    margin: 20px auto;
+    height: 30px;
+    width: 30%;
+    font-size: 1.3rem;
+    height: 3rem;
+    background-color:#F7E8C4;
+    border: 2px solid grey;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+}
+
+textarea{
+    height: 90px;
 }
 
 .message{
@@ -38,4 +52,78 @@ input, select{
 
 .category_title, label{
     font-size: 1.3rem;
+}
+
+nav{
+    background-color: #F0B800;
+    width: 100%;
+    padding: 30px;
+}
+nav a{
+    background-color: #F7E8C4;
+    padding: 10px 20px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    margin: 10px 30px;
+    text-decoration: none;
+}
+.continer{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between
+}
+footer{
+    position:fixed;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    padding: 50px 30px;
+
+    background-color: #F6DC9B;
+}
+
+.category_list{
+    display:flex; 
+    flex:wrap; 
+    margin: 10px auto;
+    width: 450px;
+    justify-content: space-between;
+}
+
+.list-container{
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button .remove{
+    border: none; 
+    background: transparent; 
+    cursor: pointer; 
+}
+
+ul{
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li{
+    padding: 5px;
+    margin: 0px 20px;
+    list-style-type: none;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
 }
