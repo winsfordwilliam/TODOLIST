@@ -5,7 +5,7 @@
     <footer>
         <div class="container">
             <div style='display:flex; justify-content:space-between;'>
-                    <p><a href="https://winsford.digital"><img style="transform:scale(0.75)" src="winsforddigital.svg"></a></p>
+                    <p><a href="https://winsford.digital"><img style="transform:scale(0.75)" src="winsforddigital.svg" alt='Winsford Digital'></a></p>
                     <ul>
                         <li><a href='tasks.php'>Tasks</a></li>
                         <li><a href='categories.php'>Categories</a></li>

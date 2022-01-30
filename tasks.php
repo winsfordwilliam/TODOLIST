@@ -16,10 +16,10 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
       $error_message = "Please fill in all of the form fields below";
       }else{
         if(add_task($title,$category_id, $description, $task_date)){
-            header('Location: tasks.php');
+            header('Location: reports.php');
             exit;
         }else{
-            $error_message= "An Error occured! Could not add the new Task!";
+            $error_message= add_task($title,$category_id, $description, $task_date);
         }
     }
   }
@@ -36,11 +36,11 @@ include('header.php');
 
 <form action="tasks.php" method='POST'>
 <div>   
-<label>Title*</label><input type="text" name="task_title" required>
+<label>Title*<input type="text" name="task_title" required></label>
 </div> 
 <div>
-    <label>Category</label>
-            <select name='category_id'>
+    <label>Category
+        <select name='category_id'>
                 <option> Select One...</option>
                 <?php
                     foreach(get_categories() as $cat){
@@ -50,12 +50,14 @@ include('header.php');
                     }
                 ?>
             </select>
+    </label>
+            
 </div>
     <div>
-            <label>Due Date*</label><input type="date" name="task_date" required>
+            <label>Due Date*<input type="date" name="task_date" required></label>
             </div>
             <div>
-                <label>Description*</label><textarea name="task_description" required></textarea>
+                <label>Description*<textarea name="task_description" required></textarea></label>
             </div>
             <div>
             <input class="button button--primary button--topic-php" type="submit" value="Submit" />

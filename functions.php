@@ -40,9 +40,9 @@ function add_task($title, $category_id, $description, $task_date){
     try{
         $results = $db -> prepare('INSERT INTO tasks (title, category, description , dueDate) VALUES (?,?,?,?)');
         $results -> bindValue(1, htmlspecialchars($title), PDO::PARAM_STR);
-        $results -> bindValue(1, $category_id, PDO::PARAM_INT);
-        $results -> bindValue(1, htmlspecialchars($description), PDO::PARAM_STR);
-        $results -> bindValue(1, $task_date, PDO::PARAM_STR);
+        $results -> bindValue(2, $category_id, PDO::PARAM_INT);
+        $results -> bindValue(3, htmlspecialchars($description), PDO::PARAM_STR);
+        $results -> bindValue(4, $task_date, PDO::PARAM_STR);
         $results -> execute();
     }catch (exception $e){
         echo "Error! Unable to add this task ". $e->getMessage();
@@ -52,11 +52,20 @@ function add_task($title, $category_id, $description, $task_date){
 function get_tasks(){
     include('inc/connection.php');
     try{
-       $tasks = $db -> query('SELECT * FROM tasks');
-       $tasks -> fetchAll(PDO::FETCH_ASSOC);
-       return $tasks;
+      return $tasks = $db -> query('SELECT * FROM tasks');
     }catch(exception $e){
         echo 'Error retrieving the tasks from the database. </br>'.$e -> getMessage();
         return array();
+    }
+}
+
+function remove_task($task_id){
+    include('inc/connection.php');
+    try{
+        $results = $db -> prepare('DELETE FROM tasks WHERE id = ?');
+        $results -> bindValue(1, $task_id, PDO::PARAM_INT);
+        $results -> execute();
+    }catch (exception $e){
+        echo "Error! Unable to remove this from the database ". $e->getMessage();
     }
 }
