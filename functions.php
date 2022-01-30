@@ -38,7 +38,7 @@ function remove_category($category_id){
 function add_task($title, $category_id, $description, $task_date){
     include('inc/connection.php');
     try{
-        $results = $db -> prepare('INSERT INTO tasks (title, category, t_description , dueDate) VALUES (?,?,?,?)');
+        $results = $db -> prepare('INSERT INTO tasks (title, category, description , dueDate) VALUES (?,?,?,?)');
         $results -> bindValue(1, htmlspecialchars($title), PDO::PARAM_STR);
         $results -> bindValue(1, $category_id, PDO::PARAM_INT);
         $results -> bindValue(1, htmlspecialchars($description), PDO::PARAM_STR);

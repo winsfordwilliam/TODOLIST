@@ -40,7 +40,7 @@ include('header.php');
 </div> 
 <div>
     <label>Category</label>
-            <select>
+            <select name='category_id'>
                 <option> Select One...</option>
                 <?php
                     foreach(get_categories() as $cat){
@@ -50,9 +50,9 @@ include('header.php');
                     }
                 ?>
             </select>
-            </div>
-            <div>
-                <label>Due Date*</label><input type="date" name="task_date" required>
+</div>
+    <div>
+            <label>Due Date*</label><input type="date" name="task_date" required>
             </div>
             <div>
                 <label>Description*</label><textarea name="task_description" required></textarea>
