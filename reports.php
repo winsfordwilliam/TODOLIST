@@ -45,7 +45,13 @@ include('header.php');
         </table>
     </div>
 
-
+    <div>
+        <table>
+            <tr><td>Title</td><td>Edit</td><td>Delete</td></tr>
+            <tr><td>date</td><td>Category</td></tr>
+            <tr><td>Decription</td></tr>
+        </table>
+   </div>
 <?php 
 include('footer.php');
 ?>
