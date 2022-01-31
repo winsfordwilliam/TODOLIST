@@ -23,16 +23,35 @@ include('header.php');
             <?php 
                 $tasks = get_tasks();
                 foreach($tasks as $task){
+                
+                echo "<table>";
+                echo "<tr>";
                 echo "<div class='category_list'>";
-                echo "<div class='category_title'>";
+                echo "<td class='category_title'>";
                 echo $task['title'];
-                echo "</div>";
-                echo "<div style='margin: auto 20px;'>";
+                echo "</td>";
+                echo "<td style='margin: auto 20px;'>";
                 echo "<form action='reports.php' method='POST'>";
                 echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='task_id' value='".$task['id'].">'"."<i class='far fa-times-circle fa-lg' ></i>"."</button>";
                 echo "</form>";
                 echo "</div>";
-                echo "</div>";
+                echo "</tr";
+                echo "<tr>";
+                echo "<td>";
+                echo $task['dueDate'];
+                echo"</td>";
+                echo "<td>";
+                echo $task['category'];
+                echo"</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>";
+                echo $task['description'];
+                echo"</td>";
+                echo "</tr>";
+                
+                echo "</tr>";
+                echo "</table>";
             }
             ?>
     </div>
@@ -44,14 +63,6 @@ include('header.php');
             <tr><td>Decription</td></tr>
         </table>
     </div>
-
-    <div>
-        <table>
-            <tr><td>Title</td><td>Edit</td><td>Delete</td></tr>
-            <tr><td>date</td><td>Category</td></tr>
-            <tr><td>Decription</td></tr>
-        </table>
-   </div>
 <?php 
 include('footer.php');
 ?>
