@@ -52,7 +52,7 @@ function add_task($title, $category_id, $description, $task_date){
 function get_tasks(){
     include('inc/connection.php');
     try{
-      return $tasks = $db -> query('SELECT * FROM tasks');
+      return $tasks = $db -> query('SELECT * FROM tasks JOIN categories ON tasks.category=categories.category_id');
     }catch(exception $e){
         echo 'Error retrieving the tasks from the database. </br>'.$e -> getMessage();
         return array();

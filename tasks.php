@@ -18,8 +18,6 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
         if(add_task($title,$category_id, $description, $task_date)){
             header('Location: reports.php');
             exit;
-        }else{
-            $error_message= add_task($title,$category_id, $description, $task_date);
         }
     }
   }

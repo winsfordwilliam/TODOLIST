@@ -20,49 +20,45 @@ include('header.php');
 
 <div><h3>Your on going tasks</h3>
     <div class="list-container">
+    <table>
             <?php 
                 $tasks = get_tasks();
                 foreach($tasks as $task){
                 
-                echo "<table>";
-                echo "<tr>";
-                echo "<div class='category_list'>";
+                echo "<tr class='category_list'>";
                 echo "<td class='category_title'>";
                 echo $task['title'];
                 echo "</td>";
-                echo "<td style='margin: auto 20px;'>";
+                echo "<td style='display:flex;'>";
+                echo "<form action='reports.php' method='POST'>";
+                echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='task_id' value='".$task['id'].">'"."<i class='fas fa-pencil-alt'></i>"."</button>";
+                echo "</form>";
                 echo "<form action='reports.php' method='POST'>";
                 echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='task_id' value='".$task['id'].">'"."<i class='far fa-times-circle fa-lg' ></i>"."</button>";
                 echo "</form>";
-                echo "</div>";
-                echo "</tr";
-                echo "<tr>";
-                echo "<td>";
+                echo "</tr>";
+                echo "<tr class='category_list'>";
+                echo "<td style='background-color: #F0B800; border-radius: 5px; padding: 3px 8px;'>";
                 echo $task['dueDate'];
                 echo"</td>";
-                echo "<td>";
-                echo $task['category'];
+                echo "<td style='margin-left: -100px;'>";
+                echo $task['categoryTitle'];
                 echo"</td>";
                 echo "</tr>";
-                echo "<tr>";
-                echo "<td>";
+                echo "<tr class='category_list'>";
+                echo "<td class='description'>";
                 echo $task['description'];
                 echo"</td>";
                 echo "</tr>";
                 
                 echo "</tr>";
-                echo "</table>";
             }
             ?>
-    </div>
-    </div>
-    <div>
-        <table>
-            <tr><td>Title</td><td>Edit</td><td>Delete</td></tr>
-            <tr><td>date</td><td>Category</td></tr>
-            <tr><td>Decription</td></tr>
         </table>
+            
     </div>
+    </div>
+
 <?php 
 include('footer.php');
 ?>

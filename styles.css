@@ -10,6 +10,7 @@ body{
     margin:0;
     padding:0;
     background-color: #F7E8C4;
+    min-height: 90vh;
 }
 form{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -80,9 +81,6 @@ nav a{
     justify-content: space-between
 }
 footer{
-    position:fixed;
-    bottom: 0;
-    margin: auto;
     width: 100%;
     padding: 50px 30px;
 
@@ -131,4 +129,7 @@ li a{
 table{
     max-width: 1000px;
     width:50%;
+}
+.description{
+    margin-bottom: 30px;
 }
