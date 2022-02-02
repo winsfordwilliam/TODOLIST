@@ -89,21 +89,22 @@ function start_edit($task_id){
 }
 
 
-function get_task($id = 'null'){
+function get_task($id = null ){
     include('inc/connection.php');
 
     $sql= "SELECT * FROM tasks JOIN categories ON tasks.category=categories.category_id";
     $where = "";
 
     if(isset($id)){
-        $where = "WHERE id = $id";
+        $where = " WHERE id = $id";
     }
 
     try{
       return $tasks = $db -> prepare($sql.$where);
+      $tasks -> execute();
 
     }catch(exception $e){
-        echo 'Error retrieving the tasks from the database. </br>'.$e -> getMessage();
+        echo 'Error retrieving the task from the database. </br>'.$e -> getMessage();
         return array();
     }
 }

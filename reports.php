@@ -8,8 +8,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $edit_task =trim(filter_input(INPUT_POST, "edit_task", FILTER_SANITIZE_NUMBER_INT));
 }
 if(isset($edit_task)){
-    $task = 
-    header("location:tasks.php");
+    header("location:edit.php?id=$edit_task");
     exit;
 }elseif(empty($task_id)){
     $error_mesage = "Unable to remove the task from the database";
