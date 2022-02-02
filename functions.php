@@ -69,3 +69,41 @@ function remove_task($task_id){
         echo "Error! Unable to remove this from the database ". $e->getMessage();
     }
 }
+
+function edit_task($task_title, $task_category, $task_date, $task_description){
+    include('inc/connection.php');
+    try{
+            $results = $db -> prepare('UPDATE tasks SET title = ?, cateogry = ?, descritpion = ?, dueDate, = ?');
+            $results -> bindValue(1, $task_title, PDO::PARAM_STR);
+            $results -> bindValue(2, $task_category, PDO::PARAM_INT);
+            $results -> bindValue(3, $task_date, PDO::PARAM_STR);
+            $results -> bindValue(1, $task_description, PDO::PARAM_STR);
+
+    }catch(exception $e){
+        echo "Error! Unable to update the task!".$e->getMessage();
+    }
+}
+
+function start_edit($task_id){
+
+}
+
+
+function get_task($id = 'null'){
+    include('inc/connection.php');
+
+    $sql= "SELECT * FROM tasks JOIN categories ON tasks.category=categories.category_id";
+    $where = "";
+
+    if(isset($id)){
+        $where = "WHERE id = $id";
+    }
+
+    try{
+      return $tasks = $db -> prepare($sql.$where);
+
+    }catch(exception $e){
+        echo 'Error retrieving the tasks from the database. </br>'.$e -> getMessage();
+        return array();
+    }
+}

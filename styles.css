@@ -133,3 +133,7 @@ table{
 .description{
     margin-bottom: 30px;
 }
+footer{
+    position:fixed;
+    bottom:0;
+}
