@@ -100,8 +100,9 @@ function get_task($id = null ){
     }
 
     try{
-      return $tasks = $db -> prepare($sql.$where);
+      $tasks = $db -> prepare($sql.$where);
       $tasks -> execute();
+      return $tasks ->fetchAll(PDO::FETCH_ASSOC);
 
     }catch(exception $e){
         echo 'Error retrieving the task from the database. </br>'.$e -> getMessage();
