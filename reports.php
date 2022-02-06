@@ -34,7 +34,7 @@ include('header.php');
                 echo "</td>";
                 echo "<td style='display:flex;'>";
                 echo "<form action='reports.php' method='POST'>";
-                echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='edit_task' value='".$task['id'].">'"."<i class='fas fa-pencil-alt'></i>"."</button>";
+                echo "<button class='edit-button' style='border: none; background:transparent; cursor: pointer;' type='submit' name='edit_task' value='".$task['id'].">'"."<i class='fas fa-pencil-alt'></i>"."</button>";
                 echo "</form>";
                 echo "<form action='reports.php' method='POST'>";
                 echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='task_id' value='".$task['id'].">'"."<i class='far fa-times-circle fa-lg' ></i>"."</button>";

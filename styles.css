@@ -107,7 +107,13 @@ button .remove{
     border: none; 
     background: transparent; 
     cursor: pointer; 
+    min-height: 40px;
 }
+
+.edit-button{
+    min-height: 45px;
+}
+
 
 ul{
 
