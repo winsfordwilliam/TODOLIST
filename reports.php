@@ -29,7 +29,7 @@ include('header.php');
                 foreach($tasks as $task){
                 
                 echo "<tr class='category_list'>";
-                echo "<td class='category_title'>";
+                echo "<td class='reports-title'>";
                 echo $task['title'];
                 echo "</td>";
                 echo "<td style='display:flex;'>";

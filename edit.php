@@ -6,7 +6,9 @@ include('header.php');
 
 
 if($_SERVER['REQUEST_METHOD']== 'GET'){
+    if(isset($_GET['id'])){
     $edit_task_id = $_GET['id'];
+    }
     if(isset($edit_task_id)){
         //var_dump($edit_task_id);
         $editing_task = get_task($edit_task_id);
@@ -15,17 +17,17 @@ if($_SERVER['REQUEST_METHOD']== 'GET'){
         $errorMessage = "Please go to <a href='reports.php'> the reports page </a> and choose a task to edit.";
     }
 };
-
-
-
 ?>
 
 <h1> Edit your task</h1>
 <?php
     if(isset($errorMessage)){
         echo "<p class='message'>$errorMessage</p>";
+        include('footer.php');
+        exit;
     }elseif(isset($success_message)){
         echo"<p class='suc_message'>".$success_message."</p>";
+        
     }
 ?>
 <form action="editing_task.php" method='POST'>
@@ -54,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']== 'GET'){
             <div>
                 <label>Description*<textarea name="edited_description" required><?php echo $editing_task[0]['description']?> </textarea></label>
             </div>
-            <input type='hidden' name='task_id' value='<?php echo $editing_task[0]['id'];?>'>
+            <input type='number' name='task_id' value='<?php echo $editing_task[0]['id'];?>'>
             <div>
             <input class="button button--primary button--topic-php" type="submit" value="Submit" />
             </div>

@@ -138,6 +138,12 @@ footer{
     bottom:0;
 }
 
+
+.reports-title{
+    font-size: 1.5rem;
+    text-align: left;
+    padding-right: 10px;
+}
 /* Media Queries */
 
 @media only screen and (max-width: 800px){
