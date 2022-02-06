@@ -11,6 +11,8 @@ body{
     padding:0;
     background-color: #F7E8C4;
     min-height: 90vh;
+    display: flex;
+    flex-direction: column;
 }
 form{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -83,8 +85,8 @@ nav a{
 footer{
     width: 100%;
     padding: 50px 30px;
-
     background-color: #F6DC9B;
+    flex-shrink: 0;
 }
 
 .category_list{
@@ -139,14 +141,21 @@ table{
 .description{
     margin-bottom: 30px;
 }
-footer{
-    position:fixed;
-    bottom:0;
+footer{ 
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-container{
+    max-width: 95%;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 
 .reports-title{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: left;
     padding-right: 10px;
 }

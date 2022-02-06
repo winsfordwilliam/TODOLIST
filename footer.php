@@ -3,7 +3,7 @@
 <script src="script.js" async defer></script>
     </body>
     <footer>
-        <div class="container">
+        <div class="footer-container">
             <div style='display:flex; justify-content:space-between; @media only screen and (max-width:570px){
                 flex-direction: column-reverse;
             }'>
