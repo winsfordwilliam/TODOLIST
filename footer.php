@@ -4,7 +4,9 @@
     </body>
     <footer>
         <div class="container">
-            <div style='display:flex; justify-content:space-between;'>
+            <div style='display:flex; justify-content:space-between; @media only screen and (max-width:570px){
+                flex-direction: column-reverse;
+            }'>
                     <p><a href="https://winsford.digital"><img style="transform:scale(0.75)" src="winsforddigital.svg" alt='Winsford Digital'></a></p>
                     <ul>
                         <li><a href='tasks.php'>Tasks</a></li>

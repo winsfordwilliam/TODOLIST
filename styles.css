@@ -137,3 +137,25 @@ footer{
     position:fixed;
     bottom:0;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 800px){
+    container{
+        width: 90%;
+    }
+    input, select, textarea{
+        width: 90%;
+    }
+
+}
+@media only screen and (max-width: 570px){
+   nav a{
+       display:block;
+   }
+   footer{
+       display: flex;
+       flex-direction: column-reverse;
+   }
+
+}

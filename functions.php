@@ -70,14 +70,16 @@ function remove_task($task_id){
     }
 }
 
-function edit_task($task_title, $task_category, $task_date, $task_description){
+function edit_task($task_id, $task_title, $task_category, $task_date, $task_description){
     include('inc/connection.php');
     try{
-            $results = $db -> prepare('UPDATE tasks SET title = ?, cateogry = ?, descritpion = ?, dueDate, = ?');
+            $results = $db -> prepare("UPDATE tasks SET title = '?', category = '?', description = '?', dueDate = '?' WHERE id = '?'");
             $results -> bindValue(1, $task_title, PDO::PARAM_STR);
             $results -> bindValue(2, $task_category, PDO::PARAM_INT);
             $results -> bindValue(3, $task_date, PDO::PARAM_STR);
-            $results -> bindValue(1, $task_description, PDO::PARAM_STR);
+            $results -> bindValue(4, $task_description, PDO::PARAM_STR);
+            $results -> bindValue(5, $task_id, PDO::PARAM_INT);
+            $results -> execute();
 
     }catch(exception $e){
         echo "Error! Unable to update the task!".$e->getMessage();
