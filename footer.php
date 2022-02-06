@@ -8,11 +8,11 @@
                 flex-direction: column-reverse;
             }'>
                     <p><a href="https://winsford.digital"><img style="transform:scale(0.75)" src="winsforddigital.svg" alt='Winsford Digital'></a></p>
-                    <ul>
+                    <!-- <ul>
                         <li><a href='tasks.php'>Tasks</a></li>
                         <li><a href='categories.php'>Categories</a></li>
                         <li><a href='reports.php'>Reports</a></li>
-                    </ul>
+                    </ul> -->
             </div>
             
         </div>
