@@ -147,6 +147,31 @@ table{
     text-align: left;
     padding-right: 10px;
 }
+.bottom-fix{
+        margin-top: auto;
+
+}
+
+.footer-container{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.footer-container{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr  1fr;
+
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 800px){
@@ -175,4 +200,10 @@ table{
        width: 95%;
        margin: 0 auto;
    }
+   .footer-grid{
+    grid-template-columns: 1fr;
+    }
+    ul{
+        display: block;
+    }
 }

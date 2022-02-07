@@ -9,6 +9,15 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
         <link rel='icon' href='W Underline.svg' type='image/x-icon'>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4P094EE56"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-E4P094EE56');
+        </script>`
     </head>
     <body>
         <nav><h1  style='margin: 60px 0px;'>✅ To Do List</h1>
