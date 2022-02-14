@@ -17,7 +17,7 @@
             gtag('js', new Date());
 
             gtag('config', 'G-E4P094EE56');
-        </script>`
+        </script>
     </head>
     <body>
         <nav><h1  style='margin: 60px 0px;'>✅ To Do List</h1>

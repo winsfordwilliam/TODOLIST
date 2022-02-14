@@ -7,13 +7,13 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $task_id = trim(filter_input(INPUT_POST, "task_id", FILTER_SANITIZE_NUMBER_INT));
     $edit_task =trim(filter_input(INPUT_POST, "edit_task", FILTER_SANITIZE_NUMBER_INT));
 }
-if(isset($edit_task)){
-    header("location:edit.php?id=$edit_task");
-    exit;
-}elseif(empty($task_id)){
-    $error_mesage = "Unable to remove the task from the database";
-}else if(remove_task($task_id)){
+
+if(isset($task_id)){
+    remove_task($task_id);
     header('location:reports.php');
+    exit;
+}else if(isset($edit_task)){
+    header("location:edit.php?id=$edit_task");
     exit;
 }
 
@@ -36,7 +36,7 @@ include('header.php');
                 echo "<form class='edit-button'action='reports.php' method='POST'>";
                 echo "<button  style='border: none; background:transparent; cursor: pointer;' type='submit' name='edit_task' value='".$task['id'].">'"."<i class='fas fa-pencil-alt fa-2x'></i>"."</button>";
                 echo "</form>";
-                echo "<form class='edit-button' action='reports.php' method='POST'>";
+                echo "<form class='remove-button' action='reports.php' method='POST'>";
                 echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='task_id' value='".$task['id'].">'"."<i class='far fa-times-circle fa-2x' ></i>"."</button>";
                 echo "</form>";
                 echo "</tr>";
