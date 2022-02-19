@@ -4,18 +4,19 @@ $pg_title = "Reports | ✅ TO DO List applicaiton";
 include('functions.php');
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
-    $task_id = trim(filter_input(INPUT_POST, "task_id", FILTER_SANITIZE_NUMBER_INT));
+    $delete_id = trim(filter_input(INPUT_POST, "delete_id", FILTER_SANITIZE_NUMBER_INT));
     $edit_task =trim(filter_input(INPUT_POST, "edit_task", FILTER_SANITIZE_NUMBER_INT));
 }
-
-if(isset($task_id)){
-    remove_task($task_id);
-    header('location:reports.php');
-    exit;
-}else if(isset($edit_task)){
+if(isset($edit_task)){
     header("location:edit.php?id=$edit_task");
     exit;
 }
+if(isset($delete_id)){
+    remove_task($delete_id);
+    header('location:reports.php');
+    exit;
+}
+
 
 include('header.php');
 
@@ -34,10 +35,10 @@ include('header.php');
                 echo "</td>";
                 echo "<td style='display:flex;'>";
                 echo "<form class='edit-button'action='reports.php' method='POST'>";
-                echo "<button  style='border: none; background:transparent; cursor: pointer;' type='submit' name='edit_task' value='".$task['id'].">'"."<i class='fas fa-pencil-alt fa-2x'></i>"."</button>";
+                echo "<a class='edit-button' href='edit.php?id=".$task['id']."'>"."<i class='fas fa-pencil-alt fa-2x'></i>"."</a>";
                 echo "</form>";
                 echo "<form class='remove-button' action='reports.php' method='POST'>";
-                echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='task_id' value='".$task['id'].">'"."<i class='far fa-times-circle fa-2x' ></i>"."</button>";
+                echo "<button style='border: none; background:transparent; cursor: pointer;' type='submit' name='delete_id' value='".$task['id'].">'"."<i class='far fa-times-circle fa-2x' ></i>"."</button>";
                 echo "</form>";
                 echo "</tr>";
                 echo "<tr class='category_list'>";

@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']== 'GET'){
             <div>
                 <label>Description*<textarea name="edited_description" required><?php echo $editing_task[0]['description']?> </textarea></label>
             </div>
-            <input type='number' name='task_id' value='<?php echo $editing_task[0]['id'];?>'>
+            <input type='hidden' name='task_id' value='<?php echo $editing_task[0]['id'];?>'>
             <div>
             <input class="button button--primary button--topic-php" type="submit" value="Submit" />
             </div>
