@@ -7,10 +7,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $delete_id = trim(filter_input(INPUT_POST, "delete_id", FILTER_SANITIZE_NUMBER_INT));
     $edit_task =trim(filter_input(INPUT_POST, "edit_task", FILTER_SANITIZE_NUMBER_INT));
 }
-if(isset($edit_task)){
-    header("location:edit.php?id=$edit_task");
-    exit;
-}
+
 if(isset($delete_id)){
     remove_task($delete_id);
     header('location:reports.php');

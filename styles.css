@@ -171,6 +171,9 @@ table{
     grid-template-columns: 1fr 1fr  1fr;
 
 }
+.edit-button{
+    color: black;
+}
 
 /* Media Queries */
 
